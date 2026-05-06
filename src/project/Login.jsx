@@ -3,16 +3,21 @@ import { useNavigate } from 'react-router-dom'
 import './login.css'
 
 function Login() {
-  const [user, setUser] = useState({ username: '', password: '' })
+
+  const [user, setUser] = useState({
+    username: '',
+    password: ''
+  })
+
   const [index, setIndex] = useState(0)
   const [showPassword, setShowPassword] = useState(false)
+
   const navigate = useNavigate()
 
   const images = [
-    "https://i.pinimg.com/1200x/27/e0/e5/27e0e50e0f1a968d58c0a2898a7158db.jpg",
-    "https://i.pinimg.com/1200x/8a/78/a3/8a78a3f553de94076a91dd11366d99c6.jpg",
-    "https://i.pinimg.com/736x/26/30/2d/26302d2edb81db72c147e7e8cc9ea671.jpg",
-    "https://i.pinimg.com/736x/9b/06/f3/9b06f3fa8cc60376c8dd1baa1a7e5394.jpg",
+    
+    "https://i.pinimg.com/1200x/33/76/f1/3376f184c88c94ccd759df1f36e2a8a7.jpg",
+
   ]
 
   const nextSlide = () => {
@@ -24,6 +29,7 @@ function Login() {
   }
 
   const handleSubmit = () => {
+
     const adminmail = 'admin@gmail.com'
     const adminpass = 'admin123'
 
@@ -32,73 +38,141 @@ function Login() {
       return
     }
 
-    if (user.username === adminmail && user.password === adminpass) {
+    if (
+      user.username === adminmail &&
+      user.password === adminpass
+    ) {
       localStorage.setItem('Role', 'Admin')
       navigate('/Adminhome')
       return
     }
 
-    let users = JSON.parse(localStorage.getItem('users')) || []
+    let users =
+      JSON.parse(localStorage.getItem('users')) || []
+
     const exist = users.find(
-      i => i.username === user.username && i.password === user.password
+      i =>
+        i.username === user.username &&
+        i.password === user.password
     )
 
     if (exist) {
-      localStorage.setItem('currentUser', JSON.stringify(user))
-      localStorage.setItem('Role', 'currentUser')
+      localStorage.setItem(
+        'currentUser',
+        JSON.stringify(user)
+      )
+
+      localStorage.setItem(
+        'Role',
+        'currentUser'
+      )
+
       navigate('/userhome')
+
     } else {
+
       alert('Invalid username or password')
       navigate('/Register')
     }
   }
 
   return (
-    <div className="login-container">
+
+    <div className="login-page">
 
       {/* LEFT SIDE */}
+
       <div className="login-left">
 
-        <h1 className="title">
-          Log in to explore trending outfits,
-          curated styles & exclusive deals ✨
-        </h1>
+        <div className="overlay"></div>
 
-        <div className="form-box">
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            onChange={handlechange}
+        <div className="slider">
+
+          <img
+            src={images[index]}
+            alt="shoe"
           />
 
-          <div className="password-box">
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              placeholder="Password"
-              onChange={handlechange}
-            />
-            <span onClick={() => setShowPassword(!showPassword)}>
-              {showPassword ? "Hide" : "Show"}
-            </span>
-          </div>
+          <button
+            className="next-btn"
+            onClick={nextSlide}
+          >
+            ›
+          </button>
 
-          <button onClick={handleSubmit}>Login</button>
-
-          <p className="link">
-            Don't have an account? <a href="/Register">Register</a>
-          </p>
         </div>
 
       </div>
 
-      {/* RIGHT SIDE SLIDER */}
+      {/* RIGHT SIDE */}
+
       <div className="login-right">
-        <div className="slider">
-          <img src={images[index]} alt="fashion" />
-          <button className="next" onClick={nextSlide}>›</button>
+
+        <div className="login-box">
+
+          <p className="small-text">
+            PREMIUM SNEAKER STORE
+          </p>
+
+          <h1>
+            Welcome Back
+          </h1>
+
+          <p className="subtitle">
+            Login to explore premium sneakers,
+            exclusive drops and modern streetwear.
+          </p>
+
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            onChange={handlechange}
+          />
+
+          <div className="password-box">
+
+            <input
+              type={
+                showPassword
+                  ? "text"
+                  : "password"
+              }
+              placeholder="Password"
+              name="password"
+              onChange={handlechange}
+            />
+
+            <span
+              onClick={() =>
+                setShowPassword(!showPassword)
+              }
+            >
+              {showPassword ? 'Hide' : 'Show'}
+            </span>
+
+          </div>
+
+          <button
+            className="login-btn"
+            onClick={handleSubmit}
+          >
+            Login
+          </button>
+
+          <p className="register-link">
+            Don’t have an account?
+            <span
+              onClick={() =>
+                navigate('/Register')
+              }
+            >
+              Register
+            </span>
+          </p>
+
         </div>
+
       </div>
 
     </div>
