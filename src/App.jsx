@@ -1,6 +1,6 @@
 import React from 'react'
 import Home from './project/Home'
-import Register from './project/register'
+import Register from './project/Register'
 import Login from './project/Login'
 import Protect from './project/Protect'
 // import Adminnavbar from './project/adminnavbar'
