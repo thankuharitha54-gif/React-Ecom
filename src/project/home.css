@@ -1,78 +1,274 @@
-
-.home-container {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-image: url('https://i.pinimg.com/736x/dd/ca/be/ddcabeb0bbdd9cdb4e5e911c18a4987c.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  position: relative;
-  font-family: Arial, sans-serif;
-  color: white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-
-.home-content {
-  text-align: center;
+html, body {
+  height: 100%;
 }
 
-.home-content h1 {
-  font-size: 50px;
-  margin-bottom: 10px;
-}
-
-.home-content p {
-  font-size: 18px;
-  opacity: 0.9;
-}
-
-
-.home-actions {
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%);
+#root {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.home-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.25);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  padding: 15px 8%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 45px;
+}
+
+.logo span {
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  color: #3b2f2f;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #d4a017;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #d4a017;
 }
 
 .btn {
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #d4a017, #b68c13);
+  color: white;
+  border-radius: 20px;
   text-decoration: none;
-  padding: 10px 25px;
-  border-radius: 25px;
-  font-weight: bold;
   transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.container1 {
+  margin-top: 90px;
+  text-align: center;
+  padding: 70px 20px;
+  background: linear-gradient(to right, #e2d6b3, #efd48a);
+}
+
+.h1 {
+  font-size: 42px;
+  font-family: 'Playfair Display', serif;
+}
+
+.tagline {
+  margin-top: 10px;
+  color: #6b5e3c;
+}
+
+.container2 {
+  position: relative;
+  height: 500px;
+  margin: 40px 8%;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  animation: slideBg 25s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container2::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  border-radius: 15px;
+}
+
+.slider-content {
+  position: relative;
+  background-color: blur;
+  padding: 25px;
+  border-radius: 10px;
   text-align: center;
 }
 
-.signup {
-  background-color: #1da1f2;
+.slider-content h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.slider-content p {
+  margin: 10px 0;
+}
+
+@keyframes slideBg {
+  0% { background-image: url('https://i.pinimg.com/1200x/3a/f6/b1/3af6b10abfed5acf64d3926cb94d0e8c.jpg'); }
+  25% { background-image: url('https://i.pinimg.com/1200x/21/a8/0e/21a80e67e4d60a4ec3800c06ed2adba0.jpg'); }
+  50% { background-image: url('https://i.pinimg.com/1200x/be/6b/8f/be6b8f60e654a889cde0852c9a9ed9ff.jpg'); }
+  75% { background-image: url('https://i.pinimg.com/736x/fb/ca/fa/fbcafafd4ac35dfd54c33588a6331829.jpg'); }
+  100% { background-image: url('https://i.pinimg.com/1200x/5e/f7/54/5ef754adc237005025ed48c8f7e49863.jpg'); }
+}
+
+.features {
+  display: flex;
+  gap: 20px;
+  padding: 50px 8%;
+}
+
+.feature-card {
+  flex: 1;
+  background: #e7d2a7;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.footer {
+  margin-top: auto;
+  background: #3b2f2f;
   color: white;
+  text-align: center;
+  padding: 15px;
 }
 
-.signup:hover {
-  background-color: #0d8ddb;
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
 }
 
-.login {
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
+@media (max-width: 1024px) {
+  .nav {
+    padding: 15px 5%;
+  }
+
+  .container2 {
+    height: 350px;
+  }
+
+  .slider-content {
+    width: 70%;
+  }
+
+  .h1 {
+    font-size: 34px;
+  }
 }
 
-.login:hover {
-  background-color: white;
-  color: black;
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+
+  .container1 {
+    padding: 50px 15px;
+  }
+
+  .h1 {
+    font-size: 24px;
+  }
+
+  .tagline {
+    font-size: 14px;
+  }
+
+  .container2 {
+    height: 260px;
+    margin: 20px;
+  }
+
+  .slider-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
 }
 
-.home-actions span {
-  font-size: 14px;
-  opacity: 0.8;
+@media (max-width: 480px) {
+  .logo span {
+    font-size: 18px;
+  }
+
+  .h1 {
+    font-size: 20px;
+  }
 }

@@ -8,14 +8,14 @@ function Usernavbar() {
         navigate('/Login')
     }
   return (
-    <div>Usernavbar
-       <nav>
-        <a href='/Userproduct'>product</a>
+    <div>
+       {/* <nav>
+        <a href='/Userproduct'>Collection</a>
         <a href='/Addtocart'>Add to cart</a>
-        <a href='/profile'>profile</a>
-        <button  onClick={handlelogout}>logout</button>
+        <a href='/profile'>profile</a> */}
+        {/* <button  onClick={handlelogout}>logout</button> */}
 
-       </nav>
+       {/* </nav> */}
     </div>
   )
 }

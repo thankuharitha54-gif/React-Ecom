@@ -43,6 +43,10 @@ function Adminproduct() {
       <br></br> 
       <input type="text" placeholder='Offer' name="offer" onChange={handlechange}/>
       <br></br>
+      <div>
+          <input type='text' name='image' placeholder='Enter the image link' onChange={handlechange} />
+      </div>
+      <br></br>
       <button  onClick={handleSubmit}>Add product</button>
       </form>
 
@@ -66,6 +70,7 @@ function Adminproduct() {
                 <td>{item.price}</td>
                 <td>{item.description}</td>
                 <td>{item.offer}</td>
+                <td>{item.image}</td>
               </tr>
             ))}
           </tbody>

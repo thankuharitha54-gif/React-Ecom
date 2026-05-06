@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
-
-function Admin() {
+function Adminuser() {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
@@ -42,4 +40,4 @@ function Admin() {
   )
 }
 
-export default Admin
+export default Adminuser

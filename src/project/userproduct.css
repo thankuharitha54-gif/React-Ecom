@@ -1,0 +1,92 @@
+/* Page background */
+.product-container {
+  padding: 40px;
+  background: #fff8e1; /* light mustard */
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 28px;
+  color: #5d4037;
+  margin-bottom: 30px;
+}
+
+/* Empty text */
+.empty {
+  text-align: center;
+  color: #777;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.card {
+  background: #fffdf7;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* Image */
+
+
+/* Name */
+.card-body h3 {
+  margin: 0;
+  color: #4e342e;
+}
+
+/* Price */
+.price {
+  font-weight: bold;
+  color: #d4a017; /* mustard */
+  margin: 8px 0;
+}
+
+/* Description */
+.desc {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Offer badge */
+.offer {
+  display: inline-block;
+  background: #ffd54f;
+  color: #5d4037;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+/* Button */
+.card button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #d4a017;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #b8860b;
+}
