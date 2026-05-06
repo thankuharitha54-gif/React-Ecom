@@ -25,11 +25,11 @@ function Home() {
             ☰
           </div>
 
-          <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
+          <div className='nav'>
             <a href="/">Home</a>
             <a href="/Userproduct">Collections</a>
             <a href="/Login">Login</a>
-            <a href="/Register" className="btn">Sign Up</a>
+            <a href="/Register">Sign Up</a>
           </div>
 
         </nav>
@@ -44,7 +44,9 @@ function Home() {
         <div className="slider-content">
           <h2>New Collection 2026</h2>
           <p>Discover elegance & modern fashion</p>
-          <a href="/Userproduct" className="btn">Shop Now</a>
+          <button className="Shop-btn">
+            <a href="/Userproduct">Shop Now</a>
+          </button>
         </div>
       </section>
 

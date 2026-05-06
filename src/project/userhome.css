@@ -22,6 +22,7 @@
 .home-wrapper * {
   position: relative;
   z-index: 1;
+  
 }
 
 /* NAVBAR */
@@ -43,23 +44,43 @@
 /* NAV LINKS */
 .nav-links {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
+  flex-wrap: nowrap;
 }
 
 .nav-links button {
-  padding: 8px 20px;
+  padding: 8px 16px;
   border: none;
   border-radius: 25px;
   background: white;
   cursor: pointer;
   transition: 0.3s;
   font-weight: 500;
+  position: relative;
+  color: #333;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.nav-links button::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #d4a017;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links button:hover::after {
+  width: 100%;
 }
 
 .nav-links button:hover {
-  background: #333;
-  color: white;
+  color: #d4a017;
 }
 
 /* HAMBURGER */
@@ -142,13 +163,14 @@
   .nav-links {
     position: absolute;
     top: 60px;
-    right: 10px;
+    right: 20px;
     background: #ffca28;
     flex-direction: column;
     width: 180px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
     display: none;
+    z-index: 999;
   }
 
   .nav-links.active {

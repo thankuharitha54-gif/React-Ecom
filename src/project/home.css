@@ -48,49 +48,56 @@ html, body {
   color: #3b2f2f;
 }
 
-.nav-links {
+.nav {
   display: flex;
   gap: 25px;
   align-items: center;
 }
 
-.nav-links a {
+.nav a {
   text-decoration: none;
   color: #333;
   font-size: 15px;
   position: relative;
 }
 
-.nav-links a::after {
+.nav a::after {
   content: '';
   position: absolute;
   width: 0%;
   height: 2px;
-  background: #d4a017;
+  background: #fce5aa;
   left: 0;
   bottom: -5px;
   transition: 0.3s;
 }
 
-.nav-links a:hover::after {
+.nav a:hover::after {
   width: 100%;
 }
 
-.nav-links a:hover {
+.nav a:hover {
   color: #d4a017;
 }
 
-.btn {
-  padding: 8px 18px;
+.Shop-btn{
+  padding: 12px 30px;
   background: linear-gradient(135deg, #d4a017, #b68c13);
   color: white;
   border-radius: 20px;
   text-decoration: none;
   transition: 0.3s;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.btn:hover {
+.Shop-btn:hover {
   transform: scale(1.05);
+}
+.Shop-btn a{
+      text-decoration: none;
 }
 
 .container1 {
