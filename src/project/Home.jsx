@@ -25,7 +25,7 @@ function Home() {
             ☰
           </div>
 
-          <div className='nav'>
+          <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
             <a href="/">Home</a>
             <a href="/Userproduct">Collections</a>
             <a href="/Login">Login</a>

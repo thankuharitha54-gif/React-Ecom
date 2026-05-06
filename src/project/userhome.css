@@ -17,6 +17,7 @@
   background: rgba(255, 255, 255, 0.6);
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
 .home-wrapper * {
@@ -33,6 +34,8 @@
   padding: 15px 40px;
   background: linear-gradient(90deg, #ffca28, #ffc107);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1000;
 }
 
 .logo {
@@ -180,6 +183,7 @@
   .nav-links button {
     width: 100%;
     margin: 5px 0;
+    pointer-events: auto;
   }
 
   .hero-section h1 {
