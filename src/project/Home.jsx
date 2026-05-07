@@ -23,13 +23,12 @@ function Home() {
             className="menu-icon"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            ☰
+            
           </div>
 
           <div className={`nav ${menuOpen ? 'active' : ''}`}>
             <a href="/">Home</a>
             <a href="/Login">Login</a>
-            <a href="/Register">Sign Up</a>
           </div>
 
         </nav>
